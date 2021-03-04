@@ -1,8 +1,7 @@
-import React , {useEffect, useState } from 'react'
+import React , {useState } from 'react'
 import logo from '../../image/logo.png';
 import { useDispatch, useSelector} from 'react-redux';
 import { addCustomer } from '../../redux/Actions/customer';
-import { getStoreInfo } from '../../redux/Actions/stores';
 import ErrorMessage from '../ErrorMessage';
 import ReCaptcha from './ReCaptcha';
 import Footer from '../Footer';
