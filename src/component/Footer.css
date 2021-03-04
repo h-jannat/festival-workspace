@@ -1,0 +1,15 @@
+.text-container{
+    padding-top: 20px;
+    font-size: 16px;
+    font-family: inherit;
+    direction: ltr !important;
+}
+
+.footer-anchor {
+    color: #e72d12;
+    font-weight: 600;
+  
+}
+.footer-anchor:hover {
+    color: #920e0d;
+}

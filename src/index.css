@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai&display=swap');
+
+body, ul {
+  margin: 0;
+  padding: 0;
+  font-family: 'Almarai',sans-serif !important;
+}
+
+#root{
+  position: relative;
+  align-items: center;
+  align-self: center;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+input[type="text"], input[type="email"],input[type="password"]
+{
+    font-size:15px !important;
+    font-family: inherit !important;
+    font-weight: 500;
+}
+
+
+.content-div{
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.main-container{
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.center-all {
+  margin: 0 !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  -ms-transform: translate(-50%, -50%) !important;
+  transform: translate(-50%, -50%) !important;
+  justify-content:space-around !important;
+}
