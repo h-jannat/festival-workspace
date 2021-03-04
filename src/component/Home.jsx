@@ -10,7 +10,7 @@ return (
     <div>
         <div style={{height:'100px'}}></div> 
             <div className="ui container centered grid reg-container" > 
-                <div className="ui form segment log-form" >
+                <div className="ui form segment reg-form" >
                 
                 <img className="ui centered large image" alt="logo" src={logo}/>
                 <div className="ui section divider"></div>

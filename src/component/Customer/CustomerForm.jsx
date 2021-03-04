@@ -12,23 +12,14 @@ const CustomerForm = (props) => {
     const dispatch = useDispatch();
     const isError = useSelector(state => state.customer.isError);
     const isDone = useSelector(state => state.customer.isDone);
-    const storeInfo = useSelector(state => state.stores.storeInfo);
    
     const [verfied,setVerified] = useState(false)
     const [validInput,setValidInput] = useState ({status:false ,type:'' , msg:'الرجاء التاكد من صحة البيانات المدخلة'});
     const [customerData, setCustomerData] = useState({fullname:'', phonenumber:'',buildingnumber:'',postcode:'',shopname:'', city:''});
     
     const cityList = ['مصراتة','طرابلس','بنغازي','غريان','الخمس','زليتن','سرت','الزاوية'];
-        if (storeInfo) 
-        {
-           customerData.buildingnumber = storeInfo.building_number;
-           customerData.postcode = storeInfo.postcode;
-           customerData.shopname = storeInfo.name;
-        }   
+ 
 
-    useEffect(()=>{
-        dispatch(getStoreInfo(props.match.params.storeCode));
-    },[]);
     
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -71,14 +62,13 @@ const CustomerForm = (props) => {
  
     const form = () => (
         <div>
-            {`${storeInfo.location}`}
             <div className="ui container centered grid reg-container" >
-            <div className="ui form segment log-form" >
+            <div className="ui form segment reg-form" >
             <form className="ui form " >
             <img className="ui centered medium image" alt="logo" src={logo}/>
             <h2 style={{textAlign:'center', fontFamily: 'inherit'}}>نموذج  المشاركة </h2>
-            <h3 style={{fontFamily: 'inherit'}}>اسم المحل: {storeInfo.name} </h3>
-            <h4 style={{fontFamily: 'inherit'}}> {storeInfo.details} </h4>
+            <h3 style={{fontFamily: 'inherit'}}>LAMAH</h3>
+            <h4 style={{fontFamily: 'inherit'}}> For IT Services</h4>
             {isError || (validInput.status && validInput.type=== "generalError") ? (<ErrorMessage head="لقد حدث خطأ" content={validInput.msg?validInput.msg:"لا يمكنك التسجيل الآن"} /> ): null}
             <div className="ui form" >
             <div className={validInput.status && validInput.type=== "TextError" ?'error field':'field'}>
@@ -127,7 +117,7 @@ const CustomerForm = (props) => {
         isDone ? (()=>{
             setCustomerData({fullname:'', phonenumber:'',buildingnumber:'',postcode:'',shopname:'', city:''});
             
-        }): storeInfo? form() : <></>
+        }): form()
     )
 }
 

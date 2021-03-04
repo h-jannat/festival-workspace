@@ -47,4 +47,12 @@ input[type="text"], input[type="email"],input[type="password"]
   -ms-transform: translate(-50%, -50%) !important;
   transform: translate(-50%, -50%) !important;
   justify-content:space-around !important;
+  width: 80%;
+}
+
+.reg-form{
+  position: absolute;
+  width: 800px !important;
+  padding: 5%  10%!important;
+  
 }
