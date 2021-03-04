@@ -8,7 +8,7 @@ const SuccessReg = ({match}) => {
      
     return (
       
-        <div className="ui container centered grid log-container" > 
+        <div className="ui container centered grid center-all" > 
         <div className="ui form segment reg-form" >
         
         <img className="ui centered medium image" alt="logo" src={logo}/>
