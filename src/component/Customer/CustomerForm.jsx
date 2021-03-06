@@ -1,12 +1,12 @@
 import React , {useState } from 'react'
-import logo from '../../image/logo.png';
+import logo from '../../image/CustomerLogo.png';
 import { useDispatch, useSelector} from 'react-redux';
 import { addCustomer } from '../../redux/Actions/customer';
 import ErrorMessage from '../ErrorMessage';
 import ReCaptcha from './ReCaptcha';
 import Footer from '../Footer';
 
-const CustomerForm = (props) => {
+const CustomerForm = () => {
 
     const dispatch = useDispatch();
     const isError = useSelector(state => state.customer.isError);
@@ -14,16 +14,14 @@ const CustomerForm = (props) => {
    
     const [verfied,setVerified] = useState(false)
     const [validInput,setValidInput] = useState ({status:false ,type:'' , msg:'الرجاء التاكد من صحة البيانات المدخلة'});
-    const [customerData, setCustomerData] = useState({fullname:'', phonenumber:'',buildingnumber:'',postcode:'',shopname:'', city:''});
+    const [customerData, setCustomerData] = useState({fullname:'', phonenumber:'', city:''});
     
     const cityList = ['مصراتة','طرابلس','بنغازي','غريان','الخمس','زليتن','سرت','الزاوية'];
- 
-
     
     const handleSubmit = async (e) => {
         e.preventDefault();
         const {fullname,phonenumber,city} = customerData 
-        let nameLen = fullname.split(" ").length;
+        let nameLen = fullname.trim.split(" ").length;
         
         if(nameLen >= 4 && nameLen <= 7)
         {
@@ -38,7 +36,6 @@ const CustomerForm = (props) => {
         }
         else
         setValidInput({ status: true, type: 'generalError', msg: 'الرجاء ادخال الاسم الرباعي ' });
- 
     };
     
     const handleChangeOfNumber = (e)=>{
@@ -49,6 +46,7 @@ const CustomerForm = (props) => {
             setValidInput({status : false,type:"" , msg:""})
         }
     }
+
     const handleChangeOfText = (e)=>{
         let format = /[`!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~1234567890]/;
         if(!isNaN(e.target.value)  || format.test(e.target.value))
@@ -64,10 +62,9 @@ const CustomerForm = (props) => {
             <div className="ui container centered grid reg-container" >
             <div className="ui form segment reg-form" >
             <form className="ui form " >
-            <img className="ui centered medium image" alt="logo" src={logo}/>
-            <h2 style={{textAlign:'center', fontFamily: 'inherit'}}>نموذج  المشاركة </h2>
-            <h3 style={{fontFamily: 'inherit'}}>LAMAH</h3>
-            <h4 style={{fontFamily: 'inherit'}}> For IT Services</h4>
+            <img className="ui centered large image" alt="logo" src={logo}/>
+            <h2 style={{fontFamily: 'inherit'}}> نموذج التسجيل </h2>
+            <h1 style={{fontFamily: 'inherit'}}>شركة لمة - لتقنية المعلومات</h1>
             {isError || (validInput.status && validInput.type=== "generalError") ? (<ErrorMessage head="لقد حدث خطأ" content={validInput.msg?validInput.msg:"لا يمكنك التسجيل الآن"} /> ): null}
             <div className="ui form" >
             <div className={validInput.status && validInput.type=== "TextError" ?'error field':'field'}>
@@ -114,7 +111,7 @@ const CustomerForm = (props) => {
     )
     return ( 
         isDone ? (()=>{
-            setCustomerData({fullname:'', phonenumber:'',buildingnumber:'',postcode:'',shopname:'', city:''});
+            setCustomerData({fullname:'', phonenumber:'', city:''});
             
         }): form()
     )

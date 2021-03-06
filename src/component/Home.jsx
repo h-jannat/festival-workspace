@@ -1,11 +1,9 @@
 import React from 'react';
 import logo from '../image/logo.png';
 import Footer from './Footer';
-import  uniqueRandom from 'unique-random-at-depth';
+
 const Home = () => {
 
-    let x = uniqueRandom(100000, 1000000, 50)
-    console.log(x());
 return (
     <div>
         <div style={{height:'100px'}}></div> 
