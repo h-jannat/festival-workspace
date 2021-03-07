@@ -21,7 +21,7 @@ const CustomerForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const {fullname,phonenumber,city} = customerData 
-        let nameLen = fullname.trim.split(" ").length;
+        let nameLen = fullname.trim().split(" ").length;
         
         if(nameLen >= 4 && nameLen <= 7)
         {

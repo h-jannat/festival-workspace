@@ -2,8 +2,9 @@ import * as api from '../../apiCustomer';
 
 export const addCustomer = (customer) => async (dispatch) => {
     try {
+      console.log(customer);
        const data = await api.addCustomer(customer)
-    
+      console.log(data);
       if(data.status === 200)
       {
         dispatch({ type:'SET_IS_DONE', payload:true , data:data});
@@ -20,15 +21,15 @@ export const addCustomer = (customer) => async (dispatch) => {
     }
   };
 
-  export const clearInfo = () => async (dispatch) => {
-      try {
-        dispatch({type:'SET_STORE_INFO', payload: null});
-        dispatch({type:'SET_IS_DONE', payload: false});
-        dispatch({type:'SET_IS_ERROR', payload: false});
+  // export const clearInfo = () => async (dispatch) => {
+  //     try {
+  //       dispatch({type:'SET_STORE_INFO', payload: null});
+  //       dispatch({type:'SET_IS_DONE', payload: false});
+  //       dispatch({type:'SET_IS_ERROR', payload: false});
         
-      } catch (error) {
-        dispatch({ type:'SET_IS_ERROR', payload:true });
-      }
-    };
+  //     } catch (error) {
+  //       dispatch({ type:'SET_IS_ERROR', payload:true });
+  //     }
+  //   };
 
   
