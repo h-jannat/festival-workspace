@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import SuccessReg from './component/SuccessReg';
 import Customer from './component/Customer/CustomerForm';
 
-const App = (props)=> {
+const App = ()=> {
 
   return (    
     <Router>

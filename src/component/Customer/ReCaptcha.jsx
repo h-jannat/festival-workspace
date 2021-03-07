@@ -16,9 +16,9 @@ const ReCaptcha = ({setVerified})=> {
       <>
         <Recaptcha
           sitekey="6LfxN10aAAAAAIJjjf87ZLgpO2mpP1T-Rzp_6mab"
-          render="explicit"
           expiredCallback={expiredCallback}
           verifyCallback={verifyCallback}
+          hl="ar"
           
         />
         </>
