@@ -21,15 +21,4 @@ export const addCustomer = (customer) => async (dispatch) => {
     }
   };
 
-  // export const clearInfo = () => async (dispatch) => {
-  //     try {
-  //       dispatch({type:'SET_STORE_INFO', payload: null});
-  //       dispatch({type:'SET_IS_DONE', payload: false});
-  //       dispatch({type:'SET_IS_ERROR', payload: false});
-        
-  //     } catch (error) {
-  //       dispatch({ type:'SET_IS_ERROR', payload:true });
-  //     }
-  //   };
-
   
